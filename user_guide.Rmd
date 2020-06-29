@@ -1,0 +1,667 @@
+---
+title: "rpgcolorsr User Guide"
+author: "Brian Froeb"
+date: "6/29/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+```{r echo=FALSE}
+library(ggplot2)
+library(tmap)
+library(rpgcolorsr)
+data(NLD_muni)
+```
+
+There are currently 71 colors included in this package the color names and their hex codes are below
+```{r, echo=FALSE}
+rpg_color_list
+```
+
+These are grouped into 20 color palettes, the colors included in each palette and their hex codes are below
+```{r, echo=FALSE}
+rpg_color_palettes
+```
+
+These color palettes can be inserted into ggplot graphics, examples of each palettes in ggplot are below
+
+## Functions Included
+
+This package includes four functions:
+
+-rpg_cols()
+-rpg_color_pal()
+-scale_color_rpg()
+-scale_fill_rpg()
+
+#### rpg_cols
+takes a input string or group of strings and returns the hex code. 
+The color must be one of the colors included in this package
+
+##### Example:
+```{r}
+rpg_cols("blue")
+
+rpg_cols("teal", "black")
+```
+
+#### rpg_color_pal
+
+Converts an input string representing a color palette into a function that can be converted into a usable color palette.
+
+```{r}
+rpg_color_pal("rpg_cold_warm")
+```
+
+By adding a step count after the function it will return a usable palette
+
+```{r}
+rpg_color_pal("rpg_cold_warm")(10)
+```
+
+These palettes can be reversed as needed
+
+```{r}
+rpg_color_pal("rpg_cold_warm", reverse = TRUE)(10)
+```
+
+#### scale_color_rpg and scale_fill_rpg
+
+These functions supply a fill or color to a ggplot call. See examples below.
+
+## Scale Color Examples
+
+### Discrete Palettes
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "logo")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "additional")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "main and additional")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "rpg_colors")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "rpg_cold_warm")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
+  geom_point(size = 4) +
+  scale_color_rpg(palette = "rpg_rainbow")
+```
+
+### Discrete Palettes
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "shale_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "green_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "red_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "earth_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "teal_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "rpg_orange_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "sea_green_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "rpg_blue_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "black_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "chartreuse_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "gold_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "burnt_orange_ramp")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "rpg_colors")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "rpg_cold_warm")
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Sepal.Length)) +
+  geom_point(size = 4) +
+  scale_color_rpg(discrete = FALSE, palette = "rpg_rainbow")
+```
+
+
+## Scale Fill Examples
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "logo", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "additional", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "main and additional", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "shale_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "green_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "red_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "earth_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "teal_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "rpg_orange_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "gray_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "sea_green_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "rpg_blue_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "navy_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "black_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "chartreuse_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "gold_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "burnt_orange_ramp", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "rpg_colors", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "rpg_cold_warm", guide = "none")
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_rpg(palette = "rpg_rainbow", guide = "none")
+```
+
+
+## Geographic Data with ggplot2
+
+These palettes can also be used with ggplot2 to display geographic data with both continuous and discrete scales, uses the scale fill function.
+
+### Discrete Palettes
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "logo")
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "additional")
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "main and additional")
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "rpg_colors")
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "rpg_cold_warm")
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = province)) +
+  scale_fill_rpg(palette = "rpg_rainbow")
+```
+
+### Continous Palettes
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "logo", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "additional", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "main and additional", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "shale_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "green_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "red_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "earth_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "teal_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "rpg_orange_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "gray_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "sea_green_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "rpg_blue_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "navy_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "black_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "chartreuse_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "gold_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "burnt_orange_ramp", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "rpg_colors", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "rpg_cold_warm", discrete = FALSE)
+```
+
+```{r}
+ggplot(NLD_muni) +
+  geom_sf(aes(fill = population)) +
+  scale_fill_rpg(palette = "rpg_rainbow", discrete = FALSE)
+```
+
+## Geographic Data with tmap
+
+tmap uses a differing syntax from ggplot however by using the rpg_color_pal function, with a step count indicated, and saving the output to an object these palettes can be used in tmap.
+
+### Discrete Palettes
+```{r}
+MyPal <- rpg_color_pal("logo")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("additional")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("main and additional")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_colors")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_cold_warm")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_rainbow")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("province", palette = MyPal) 
+```
+
+### Continous Palettes
+```{r}
+MyPal <- rpg_color_pal("logo")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("additional")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("main and additional")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("shale_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("green_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("red_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("earth_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("teal_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_orange_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("gray_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("sea_green_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_blue_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("navy_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("black_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("chartreuse_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("gold_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("burnt_orange_ramp")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_colors")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_cold_warm")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal) 
+```
+
+```{r}
+MyPal <- rpg_color_pal("rpg_rainbow")(10)
+tm_shape(NLD_muni) +
+  tm_polygons("population", palette = MyPal)
+```

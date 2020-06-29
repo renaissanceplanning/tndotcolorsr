@@ -31,7 +31,7 @@ rpg_color_list <- c(
   `sea green` = "#218675",
     #sea green color ramp
     `sea_green_ramp1` = "#c6f2eb",
-    `sea_green_ramp5` = "#10433a",
+    `sea_green_ramp2` = "#10433a",
 
   `blue` = "#008ba6",
     #blue color ramp
@@ -91,8 +91,8 @@ rpg_color_list <- c(
   #earth
   `earth` = "#edece6",
   #earth ramp
-  `earth_ramp1` = "#d9d6ce",
   `earth_ramp1` = "#f0f2da",
+  `earth_ramp2` = "#d9d6ce",
 
   #horizon
   `horizon1` = "#c9d1d4",
@@ -179,7 +179,7 @@ rpg_color_palettes <- list(
 
   `red_ramp` = rpg_cols("red_ramp1","red_ramp5"),
 
-  `earth_ramp` = rpg_cols("earth_ramp1","earth_ramp1"),
+  `earth_ramp` = rpg_cols("earth_ramp1","earth_ramp2"),
 
   `rpg_colors` = rpg_cols("rpg_1", "rpg_2", "rpg_3"),
 
@@ -197,8 +197,8 @@ rpg_color_palettes <- list(
 #'adding a number after the function call will create a palette with that number
 #'of steps
 #'
-#'@param palette A string representing a color palette, see the insert github
-#'link to markdown doc to get a full list of palettes
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'for a full list of palettes
 #'
 #'@param reverse When true the default order of the color palette is reversed
 #'
@@ -220,8 +220,8 @@ rpg_color_pal <- function(palette = "logo", reverse = FALSE, ...) {
 #'
 #'By default the palette will be discrete.
 #'
-#'@param palette A string representing a color palette, see the insert github
-#'link to markdown doc to get a full list of palettes
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'for a full list of palettes
 #'
 #'@param discrete Changes between discrete or continuous scales
 #'
@@ -246,8 +246,8 @@ scale_color_rpg <- function(palette = "logo", discrete = TRUE, reverse = FALSE, 
 #'
 #'By default the palette will be discrete.
 #'
-#'@param palette A string representing a color palette, see the insert github
-#'link to markdown doc to get a full list of palettes
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'for a full list of palettes
 #'
 #'@param discrete Changes between discrete or continuous scales
 #'
