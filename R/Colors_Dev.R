@@ -197,7 +197,7 @@ rpg_color_palettes <- list(
 #'adding a number after the function call will create a palette with that number
 #'of steps
 #'
-#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 #'for a full list of palettes
 #'
 #'@param reverse When true the default order of the color palette is reversed
@@ -220,7 +220,7 @@ rpg_color_pal <- function(palette = "logo", reverse = FALSE, ...) {
 #'
 #'By default the palette will be discrete.
 #'
-#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 #'for a full list of palettes
 #'
 #'@param discrete Changes between discrete or continuous scales
@@ -246,7 +246,7 @@ scale_color_rpg <- function(palette = "logo", discrete = TRUE, reverse = FALSE, 
 #'
 #'By default the palette will be discrete.
 #'
-#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 #'for a full list of palettes
 #'
 #'@param discrete Changes between discrete or continuous scales

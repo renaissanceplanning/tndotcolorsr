@@ -7,7 +7,7 @@
 scale_fill_rpg(palette = "logo", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+\item{palette}{A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 for a full list of palettes}
 
 \item{discrete}{Changes between discrete or continuous scales}

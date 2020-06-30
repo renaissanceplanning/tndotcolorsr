@@ -7,7 +7,7 @@
 rpg_color_pal(palette = "logo", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr/
+\item{palette}{A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 for a full list of palettes}
 
 \item{reverse}{When true the default order of the color palette is reversed}
