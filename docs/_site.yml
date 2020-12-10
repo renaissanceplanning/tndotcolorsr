@@ -1,0 +1,12 @@
+name: "rpgcolorsr"
+output_dir: "."
+navbar:
+  title:
+  left:
+    - text: "User Guide"
+      href: index.html
+    - text: "Examples"
+      href: examples.html
+output:
+  html_document:
+    theme: flatly

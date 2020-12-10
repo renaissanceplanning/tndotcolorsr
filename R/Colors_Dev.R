@@ -1,3 +1,9 @@
+#'Full Color List
+#'
+#'A full list of the individual colors used in this package, including name and
+#'hex code
+#'
+#' @export
 rpg_color_list <- c(
 #Logo Colors
   `shale` = "#3e4d54",
@@ -143,6 +149,11 @@ rpg_cols <- function(...) {
   rpg_color_list[cols]
 }
 
+#'Full Palette List
+#'
+#'A full list of the color palets used in this package
+#'
+#' @export
 rpg_color_palettes <- list(
   `logo` = rpg_cols("shale", "green", "teal", "orange"),
 
@@ -186,7 +197,11 @@ rpg_color_palettes <- list(
   `rpg_cold_warm` = rpg_cols("cw_1","cw_2","cw_3","cw_4","cw_5"),
 
   `rpg_rainbow` = rpg_cols("rainbow_1", "rainbow_2", "rainbow_3", "rainbow_4",
-                           "rainbow_5", "rainbow_6", "rainbow_7", "rainbow_8")
+                           "rainbow_5", "rainbow_6", "rainbow_7", "rainbow_8"),
+
+  `rpg_rainbow_no_grey` = rpg_cols("rainbow_2", "rainbow_3", "rainbow_4",
+                                   "rainbow_5", "rainbow_6", "rainbow_7",
+                                   "rainbow_8")
 )
 
 #'Retrieve a Palette
