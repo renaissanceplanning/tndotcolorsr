@@ -11,6 +11,6 @@ An object of class \code{list} of length 21.
 rpg_color_palettes
 }
 \description{
-A full list of the color palets used in this package
+A full list of the color palettes used in this package
 }
 \keyword{datasets}

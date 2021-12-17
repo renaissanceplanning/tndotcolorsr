@@ -151,7 +151,7 @@ rpg_cols <- function(...) {
 
 #'Full Palette List
 #'
-#'A full list of the color palets used in this package
+#'A full list of the color palettes used in this package
 #'
 #' @export
 rpg_color_palettes <- list(
@@ -279,5 +279,35 @@ scale_fill_rpg <- function(palette = "logo", discrete = TRUE, reverse = FALSE, .
     scale_fill_gradientn(colours = pal(256), ...)
   }
 }
+
+
+#' Create a Color Matrix for Mapdeck
+#'
+#' This funciton will create the color matrix required to a use a custom
+#' palette while using mapdeck.
+#'
+#'@param palette A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
+#'for a full list of palettes
+#'
+#'@param reverse When true the default order of the color palette is reversed
+#'
+#'@return a color matrix
+#' @export
+mapdeck_palette <- function(palette = "logo", reverse = FALSE){
+  steps <- length(rpg_color_palettes[[palette]])
+  colors <- rpg_color_pal(palette = palette, reverse = reverse)(steps)
+  matrix <- colorRamp(colors)( (1:256)/256 )
+  return(matrix)
+}
+
+
+
+
+
+
+
+
+
+
 
 
