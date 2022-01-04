@@ -4,13 +4,16 @@
 \alias{mapdeck_palette}
 \title{Create a Color Matrix for Mapdeck}
 \usage{
-mapdeck_palette(palette = "logo", reverse = FALSE)
+mapdeck_palette(palette = "logo", reverse = FALSE, alpha = 256)
 }
 \arguments{
 \item{palette}{A string representing a color palette, see https://bfroebrpg.github.io/rpgcolorsr_pages/
 for a full list of palettes}
 
 \item{reverse}{When true the default order of the color palette is reversed}
+
+\item{alpha}{sets the alpha for the colors, must be int between 1 and 256.
+1 is transparent and 256 is solid.}
 }
 \value{
 a color matrix

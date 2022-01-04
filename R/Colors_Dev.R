@@ -291,12 +291,17 @@ scale_fill_rpg <- function(palette = "logo", discrete = TRUE, reverse = FALSE, .
 #'
 #'@param reverse When true the default order of the color palette is reversed
 #'
+#'@param alpha sets the alpha for the colors, must be int between 1 and 256.
+#'1 is transparent and 256 is solid.
+#'
+#'
 #'@return a color matrix
 #' @export
-mapdeck_palette <- function(palette = "logo", reverse = FALSE){
+mapdeck_palette <- function(palette = "logo", reverse = FALSE, alpha = 256){
   steps <- length(rpg_color_palettes[[palette]])
   colors <- rpg_color_pal(palette = palette, reverse = reverse)(steps)
   matrix <- colorRamp(colors)( (1:256)/256 )
+  matrix <- cbind(matrix, alpha)
   return(matrix)
 }
 
