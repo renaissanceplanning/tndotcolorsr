@@ -1,11 +1,11 @@
 Package: rpgcolorsr
 Type: Package
 Title: Loads RPG Color palettes for visualizations in R
-Version: 0.1.4
+Version: 0.1.5
 Author: Brian Froeb
 Maintainer: Brian Froeb <BFroeb@citiesthatwork.com>
 Description: Loads RPG Color palettes for visualizations in R
-    Currently supports ggplot2 and tmap, new packages added upon request.
+    Currently supports ggplot2, mapdeck, plotly, and tmap, new packages added upon request.
 License: MIT License
 Encoding: UTF-8
 LazyData: true

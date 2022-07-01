@@ -305,8 +305,26 @@ mapdeck_palette <- function(palette = "logo", reverse = FALSE, alpha = 256){
   return(matrix)
 }
 
-
-
+#'RPG Mapbox Base Maps
+#'
+#'URLs to use Mapbox vector tile services as an interactive basemap
+#'
+#' @export
+rpg_basemaps <- list(
+  `atlas_tmap` = paste0(
+    "https://api.mapbox.com/styles/v1/renplan/cl4olqb9v000514ldljtf1omt/",
+    "tiles/256/{z}/{x}/{y}@2x?access_token=pk.",
+    "eyJ1IjoicmVucGxhbiIsImEiOiJjaWgzcHdjOTIweTJvdzdtNWxlYnZ5MXZjIn0",
+    ".zMsUwMAoEu6DZvd7IYVtjg"
+  ),
+  `atlas_style` = paste0(
+    "mapbox://styles/renplan/cl4olqb9v000514ldljtf1omt"
+  ),
+  `rpg_access_token` = paste0(
+    "pk.eyJ1IjoicmVucGxhbiIsImEiOiJjaWgzcHdjOTIweTJ",
+    "vdzdtNWxlYnZ5MXZjIn0.zMsUwMAoEu6DZvd7IYVtjg"
+  )
+)
 
 
 
