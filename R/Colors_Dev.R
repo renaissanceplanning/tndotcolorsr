@@ -115,6 +115,7 @@ rpg_color_list <- c(
   `rpg_1` = "#3DBFBA",
   `rpg_2` = "#F9F963",
   `rpg_3` = "#F29F24",
+  `white` = "#ffffff",
 
   #rpg rainbow
   `rainbow_1` = "#E0E0E0",
@@ -184,15 +185,22 @@ rpg_color_palettes <- list(
 
   `chartreuse_ramp` = rpg_cols("chartreuse_ramp1","chartreuse_ramp5"),
 
+  `chartreuse_ramp_white` = rpg_cols("white",
+                                     "chartreuse_ramp5"),
+
   `gold_ramp` = rpg_cols("gold_ramp1","gold_ramp5"),
 
   `burnt_orange_ramp` = rpg_cols("burnt_orange_ramp1","burnt_orange_ramp5"),
 
   `red_ramp` = rpg_cols("red_ramp1","red_ramp5"),
 
+  `red_ramp_white` = rpg_cols("white","red_ramp5"),
+
   `earth_ramp` = rpg_cols("earth_ramp1","earth_ramp2"),
 
   `rpg_colors` = rpg_cols("rpg_1", "rpg_2", "rpg_3"),
+
+  `rpg_colors_white` = rpg_cols("rpg_1", "white", "rpg_3"),
 
   `rpg_cold_warm` = rpg_cols("cw_1","cw_2","cw_3","cw_4","cw_5"),
 
