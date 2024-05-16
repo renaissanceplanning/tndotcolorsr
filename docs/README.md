@@ -1,3 +1,3 @@
-# rpgcolorsr_pages
+#  tndotcolorsr_pages
 
-`devtools::install_github('BFroebRPG/rpgcolorsr')`
+`devtools::install_github('renaissanceplanning/tndotcolorsr')`
