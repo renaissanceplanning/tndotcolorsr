@@ -1,10 +1,10 @@
-Package: rpgcolorsr
+Package: tndotcolorsr
 Type: Package
-Title: Loads RPG Color palettes for visualizations in R
+Title: Loads TNDOT Color palettes for visualizations in R
 Version: 0.1.5
 Author: Brian Froeb
 Maintainer: Brian Froeb <BFroeb@citiesthatwork.com>
-Description: Loads RPG Color palettes for visualizations in R
+Description: Loads TNDOT Color palettes for visualizations in R
     Currently supports ggplot2, mapdeck, plotly, and tmap, new packages added upon request.
 License: MIT License
 Encoding: UTF-8
