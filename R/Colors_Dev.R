@@ -46,8 +46,7 @@ rpg_color_palettes <- list(
 
   `blue_purple` = rpg_cols("white", "purple", "blue"),
 
-  `blue` = rpg_cols("white",  "blue"),
-
+  `blue` = rpg_cols("white",  "blue")
 )
 
 #'Retrieve a Palette
