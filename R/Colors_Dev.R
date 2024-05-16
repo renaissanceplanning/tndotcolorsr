@@ -25,13 +25,13 @@ rpg_color_list <- c(
 #'function with no input
 #'
 #' @export
-rpg_cols <- function(...) {
+tndot_cols <- function(...) {
   cols <- c(...)
 
   if (is.null(cols))
-    return (rpg_color_list)
+    return (tndot_color_list)
 
-  rpg_color_list[cols]
+  tndot_color_list[cols]
 }
 
 #'Full Palette List
@@ -39,14 +39,14 @@ rpg_cols <- function(...) {
 #'A full list of the color palettes used in this package
 #'
 #' @export
-rpg_color_palettes <- list(
-  `cool_to_warm` = rpg_cols("blue", "purple",  "white", "salmon", "red"),
+tndot_color_palettes <- list(
+  `cool_to_warm` = tndot_cols("blue", "purple",  "white", "salmon", "red"),
 
-  `reds` = rpg_cols("white", "salmon", "red"),
+  `reds` = tndot_cols("white", "salmon", "red"),
 
-  `blue_purple` = rpg_cols("white", "purple", "blue"),
+  `blue_purple` = tndot_cols("white", "purple", "blue"),
 
-  `blue` = rpg_cols("white",  "blue")
+  `blue` = tndot_cols("white",  "blue")
 )
 
 #'Retrieve a Palette
@@ -65,8 +65,8 @@ rpg_color_palettes <- list(
 #'@return a function to create a color palette
 #'
 #' @export
-rpg_color_pal <- function(palette = "cool_to_warm", reverse = FALSE, ...) {
-  pal <- rpg_color_palettes[[palette]]
+tndot_color_pal <- function(palette = "cool_to_warm", reverse = FALSE, ...) {
+  pal <- tndot_color_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
 
@@ -89,11 +89,11 @@ rpg_color_pal <- function(palette = "cool_to_warm", reverse = FALSE, ...) {
 #'
 #'@return a function to create a color palette
 #' @export
-scale_color_rpg <- function(palette = "cool_to_warm", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- rpg_color_pal(palette = palette, reverse = reverse)
+scale_color_tndot <- function(palette = "cool_to_warm", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- tndot_color_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("rpg_color_", palette), palette = pal, ...)
+    discrete_scale("colour", paste0("tndot_color_", palette), palette = pal, ...)
   } else {
     scale_color_gradientn(colours = pal(256), ...)
   }
@@ -115,11 +115,11 @@ scale_color_rpg <- function(palette = "cool_to_warm", discrete = TRUE, reverse =
 #'
 #'@return a function to create a color palette
 #' @export
-scale_fill_rpg <- function(palette = "cool_to_warm", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- rpg_color_pal(palette = palette, reverse = reverse)
+scale_fill_tndot <- function(palette = "cool_to_warm", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- tndot_color_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("rpg_color_", palette), palette = pal, ...)
+    discrete_scale("fill", paste0("tndot_color_", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
@@ -143,8 +143,8 @@ scale_fill_rpg <- function(palette = "cool_to_warm", discrete = TRUE, reverse = 
 #'@return a color matrix
 #' @export
 mapdeck_palette <- function(palette = "cool_to_warm", reverse = FALSE, alpha = 256){
-  steps <- length(rpg_color_palettes[[palette]])
-  colors <- rpg_color_pal(palette = palette, reverse = reverse)(steps)
+  steps <- length(tndot_color_palettes[[palette]])
+  colors <- tndot_color_pal(palette = palette, reverse = reverse)(steps)
   matrix <- colorRamp(colors)( (1:256)/256 )
   matrix <- cbind(matrix, alpha)
   return(matrix)
