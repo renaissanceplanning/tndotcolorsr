@@ -4,7 +4,7 @@
 #'hex code
 #'
 #' @export
-rpg_color_list <- c(
+tndot_color_list <- c(
   `purple` = "#552973",
   `blue` = "#203C73",
   `red` = "#F22727",
